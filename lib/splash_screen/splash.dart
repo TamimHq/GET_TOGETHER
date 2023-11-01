@@ -63,7 +63,7 @@ class _SplashState extends State<Splash> with SingleTickerProviderStateMixin {
                 opacity: _opacityAnimation,
               ),
               const Text(
-                'Budget Bites',
+                'Get Together',
                 style: TextStyle(fontSize: 30, fontWeight: FontWeight.w600, fontFamily: 'Poppins'),
               ),
             ],
