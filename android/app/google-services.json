@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "193749127321",
-    "project_id": "gettogether-bbe79",
-    "storage_bucket": "gettogether-bbe79.appspot.com"
+    "project_number": "297726213880",
+    "project_id": "cse-327-6917c",
+    "storage_bucket": "cse-327-6917c.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:193749127321:android:37a3cb39978db952d7e808",
+        "mobilesdk_app_id": "1:297726213880:android:6d0a01d9ffd3118c73850d",
         "android_client_info": {
           "package_name": "com.example.grt_together"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyCDE3LvAZ9R5hpcLUCoZOgD0_FJB6dQDL4"
+          "current_key": "AIzaSyAB478480zW0vERakwVSKPaE_saVdMIlvk"
         }
       ],
       "services": {

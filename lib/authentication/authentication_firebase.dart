@@ -1,7 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
-
-import '../auth/sign_up.dart';
+import 'package:get_together/authentication/exceptionhandelar.dart';
+import '../auth/sign_in.dart';
+import '../dashboard/dashboard.dart';
 
 class Authentication extends GetxController{
   static Authentication get instance => Get.find();
@@ -18,6 +19,24 @@ class Authentication extends GetxController{
   }
 
   _setInitialScreen(User? user) {
-    user == null ? Get.offAll(()=>const SignUp()):Get.offAll(()=> const Dashboard());
+    user == null ? Get.offAll(()=>const SignIn()):Get.offAll(()=> const Dashboard());
+  }
+  
+  Future<void> creatUserWithEmailAndPassword(String email, String password) async{
+    try{
+        await _auth.createUserWithEmailAndPassword(email: email, password: password);
+        firebaseUser!=null ? Get.offAll(()=> const Dashboard()): Get.to(()=>const SignIn());
+    }  on FirebaseAuthException catch(e){
+      final ex = SignUpWithEmailAndPasswordFailure.code(e.code);
+      print('FIREBASE AUTH EXCEPTION - ${ex.message}');
+      throw ex;
+    }
+
+    catch(_){
+      const ex = SignUpWithEmailAndPasswordFailure();
+      print('EXCEPTION - ${ex.message}');
+      throw ex;
+
+    }
   }
 }

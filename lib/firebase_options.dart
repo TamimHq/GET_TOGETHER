@@ -17,7 +17,10 @@ import 'package:flutter/foundation.dart'
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
-      return web;
+      throw UnsupportedError(
+        'DefaultFirebaseOptions have not been configured for web - '
+        'you can reconfigure this by running the FlutterFire CLI again.',
+      );
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
@@ -25,7 +28,10 @@ class DefaultFirebaseOptions {
       case TargetPlatform.iOS:
         return ios;
       case TargetPlatform.macOS:
-        return macos;
+        throw UnsupportedError(
+          'DefaultFirebaseOptions have not been configured for macos - '
+          'you can reconfigure this by running the FlutterFire CLI again.',
+        );
       case TargetPlatform.windows:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for windows - '
@@ -43,38 +49,20 @@ class DefaultFirebaseOptions {
     }
   }
 
-  static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyDCk2sqHaeY1z9t9Eoa6QLOTUbQ09MJefY',
-    appId: '1:193749127321:web:39e2bd5696924546d7e808',
-    messagingSenderId: '193749127321',
-    projectId: 'gettogether-bbe79',
-    authDomain: 'gettogether-bbe79.firebaseapp.com',
-    storageBucket: 'gettogether-bbe79.appspot.com',
-  );
-
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyCDE3LvAZ9R5hpcLUCoZOgD0_FJB6dQDL4',
-    appId: '1:193749127321:android:37a3cb39978db952d7e808',
-    messagingSenderId: '193749127321',
-    projectId: 'gettogether-bbe79',
-    storageBucket: 'gettogether-bbe79.appspot.com',
+    apiKey: 'AIzaSyAB478480zW0vERakwVSKPaE_saVdMIlvk',
+    appId: '1:297726213880:android:6d0a01d9ffd3118c73850d',
+    messagingSenderId: '297726213880',
+    projectId: 'cse-327-6917c',
+    storageBucket: 'cse-327-6917c.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyBPVQXApoK-cTsiMOoa1ToRI23ZcV5tgfI',
-    appId: '1:193749127321:ios:d565c41f6835770bd7e808',
-    messagingSenderId: '193749127321',
-    projectId: 'gettogether-bbe79',
-    storageBucket: 'gettogether-bbe79.appspot.com',
+    apiKey: 'AIzaSyBz8emuMGyeY10AxAg9fe5i9zrMrIbK_bg',
+    appId: '1:297726213880:ios:04448ab1e1eb5dd873850d',
+    messagingSenderId: '297726213880',
+    projectId: 'cse-327-6917c',
+    storageBucket: 'cse-327-6917c.appspot.com',
     iosBundleId: 'com.example.grtTogether',
-  );
-
-  static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyBPVQXApoK-cTsiMOoa1ToRI23ZcV5tgfI',
-    appId: '1:193749127321:ios:1829f3b00e2100cbd7e808',
-    messagingSenderId: '193749127321',
-    projectId: 'gettogether-bbe79',
-    storageBucket: 'gettogether-bbe79.appspot.com',
-    iosBundleId: 'com.example.grtTogether.RunnerTests',
   );
 }

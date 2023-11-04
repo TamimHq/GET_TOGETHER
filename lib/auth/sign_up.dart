@@ -1,8 +1,10 @@
 import 'package:auth_buttons/auth_buttons.dart';
 import 'package:flutter/material.dart';
 import 'package:get_together/auth/sign_in.dart';
+import 'package:get_together/auth/user_model.dart';
 import 'package:get_together/controler/SignupController.dart';
 import 'package:get/get.dart';
+import 'package:get_together/dashboard/dashboard.dart';
 class SignUp extends StatefulWidget{
   const SignUp({super.key});
 
@@ -144,7 +146,17 @@ class _SignUpState extends State<SignUp> {
                                           {
                                             if (doPasswordsMatch()) {
                                               // Passwords match and are strong, proceed with sign-up
-                                              SignUpController.instance.registerUser(controller.emailController.text.trim() , controller.passwordController.text.trim());
+                                              final user = UserModel(
+                                                email: controller.emailController.text.trim(),
+                                                password: controller.passwordController.text.trim(),
+                                              );
+                                              SignUpController.instance.createUser(user);
+                                              Navigator.push(
+                                                  context,
+                                                  MaterialPageRoute(
+                                                  builder: (context) =>
+                                              const Dashboard(),
+                                            ));
 
 
 

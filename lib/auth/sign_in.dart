@@ -2,6 +2,7 @@ import 'package:auth_buttons/auth_buttons.dart';
 import'package:flutter/material.dart';
 import 'package:get_together/auth/sign_up.dart';
 
+import '../dashboard/dashboard.dart';
 import '../forgot_password/reset_password.dart';
 
 class SignIn extends StatefulWidget{
@@ -119,7 +120,12 @@ class _SignInState extends State<SignIn> {
                             'Sign In',
                           ),
                           onPressed: () {
-                            print('Completed');
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                builder: (context) =>
+                            const Dashboard(),
+                                ),);
                           },),
                       ),
                       const SizedBox(height: 15,),
