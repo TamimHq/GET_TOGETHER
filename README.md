@@ -1,4 +1,4 @@
-# grt_together
+# get_together
 
 A new Flutter project.
 
